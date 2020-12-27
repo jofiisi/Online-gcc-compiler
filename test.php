@@ -8,5 +8,6 @@
     <?php
 print_r($_POST[testTxt]);
 ?></h2>
+    <span id="g100">test</span>
     </body>
 </html>
