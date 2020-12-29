@@ -10,18 +10,18 @@
         <span id="g100">
             <?php
                 $test = ($_POST[testTxt]);
-                // print "<span id=\"g100\">".$_POST[testTxt]."</span>";
-
-                /*if(preg_match("/^hallo.*php$/ui",$test))
-                {
-                    
-                }*/
                 $fileC = fopen("cCompiler/test.c", "w");
                 fwrite($fileC, $test);
-                exec("cd home/pi/server-test/cCompiler");
-                exec("ggc test.c");
-                passthru("./a.out");
+                passthru("./compile.sh");
+                echo($output);
             ?>
         </span>
+        <br>
+        <br>
+        <a href="./cCompiler/test.c">C Datei herunterladen</a>
+        <br>
+        <a href="./a.out">Out Datei herunterladen</a>
+        <br>
+        <a href="./test.exe">exe Datei herunterladen</a>
     </body>
 </html>
