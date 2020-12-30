@@ -9,19 +9,20 @@
     <body>
         <span id="g100">
             <?php
+                $Name = ($_POST[dataName]);
                 $test = ($_POST[testTxt]);
-                $fileC = fopen("cCompiler/test.c", "w");
+                putenv("fileName=$Name");
+                $fileC = fopen("cCompiler/$Name.c", "w");
                 fwrite($fileC, $test);
                 passthru("./compile.sh");
-                echo($output);
+                echo($output $Name);
             ?>
-        </span>
-        <br>
-        <br>
-        <a href="./cCompiler/test.c">C Datei herunterladen</a>
-        <br>
-        <a href="./a.out">Out Datei herunterladen</a>
-        <br>
-        <a href="./test.exe">exe Datei herunterladen</a>
+        </span>     
+                <br>     
+                <a href="./cCompiler/$<?php echo $Name?>.c">$<?php echo $Name?>.c</a>
+                <br>
+                <a href="./$<?php echo $Name?>.out">$<?php echo $Name?>.out</a>
+                <br>
+                <a href="./<?php echo $Name?>.exe">$<?php echo $Name?>.exe</a>
     </body>
 </html>
