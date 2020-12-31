@@ -11,10 +11,9 @@
             <?php
                 $Name = ($_POST[dataName]);
                 $test = ($_POST[testTxt]);
-                putenv("fileName=$Name");
                 $fileC = fopen("cCompiler/$Name.c", "w");
                 fwrite($fileC, $test);
-                passthru("./compile.sh");
+                passthru("./compile.sh"  $Name);
                 echo($output $Name);
             ?>
         </span>     
