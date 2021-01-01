@@ -12,15 +12,16 @@
                 $test = $_POST["testTxt"];
                 $fileC = fopen("cCompiler/$Name.c", "w");
                 fwrite($fileC, $test);
-                passthru("sudo gcc ./cCompiler/$Name.c -o ./cCompiler/$Name.out 2>&1");
-                passthru("sudo x86_64-w64-mingw32-gcc -o ./cCompiler/$Name.exe ./cCompiler/$Name.c 2>&1");
+                exec("export PATH=$PATH:/usr/bin");
+                passthru("gcc ./cCompiler/$Name.c -o ./cCompiler/$Name.out  2>&1");
+                passthru("x86_64-w64-mingw32-gcc -o ./cCompiler/$Name.exe ./cCompiler/$Name.c 2>&1");
                 passthru("./cCompiler/$Name.out 2>&1");
             ?>
         </span>     
                 <br>     
-                <a href="./cCompiler/$<?php echo $Name?>.c">$<?php echo $Name?>.c</a>
+                <a href="./cCompiler/<?php echo $Name?>.c">$<?php echo $Name?>.c</a>
                 <br>
-                <a href="./cCompiler/$<?php echo $Name?>.out">$<?php echo $Name?>.out</a>
+                <a href="./cCompiler/<?php echo $Name?>.out">$<?php echo $Name?>.out</a>
                 <br>
                 <a href="./cCompiler/<?php echo $Name?>.exe">$<?php echo $Name?>.exe</a> 
     </body>
