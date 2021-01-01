@@ -1,5 +1,5 @@
 export PATH=$PATH:/usr/bin
-filename=$1 
-gcc ./cCompiler/"$filename".c 2>&1
-x86_64-w64-mingw32-gcc -o "$filename".exe ./cCompiler/"$filename".c 2>&1
-./"$filename".out 2>&1s
+filename=$Name
+gcc ./cCompiler/test.c 2>&1s
+x86_64-w64-mingw32-gcc -o test.exe ./cCompiler/test.c 2>&1s
+./test.out 2>&1s
