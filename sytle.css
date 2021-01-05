@@ -2,3 +2,12 @@
     color:green;
     font-size:50;
 }
+#cIn{
+    resize: vertical;
+    width: 300px;
+    min-height: 30px;
+}
+body{
+    background-color: gray;
+}
+

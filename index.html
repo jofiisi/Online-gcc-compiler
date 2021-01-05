@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>jofis pi</title>
+        <link rel="stylesheet" href="sytle.css" type="text/css">
     </head>
     <body>
         <h1><a href="test.html" target="blank">test</a></h1> 
@@ -12,16 +13,22 @@
         </p>
         <p>
             <form action="test.php" method="POST">
-                <label for="test">Test</label>
-                <textarea name="testTxt" id="test"></textarea>
-
+                <label for="cIn">Test</label>
+                <textarea name="testTxt" id="cIn" onkeydown="autoExpand(this)" placeholder="Put your C code here..."></textarea>
+                <br>
                 <input type="submit" name="submit" id="test" value="kompilieren">
                 <br>
-
                 <label for="dataName">Name der Datei</label>
                 <input type="text" name="Name" id="dataName">
             </form>
         </p>
         <br>
     </body>
+    <script type="text/javascript">
+        function autoExpand(textA)
+        {
+            var cText = textA.value.length + 1;
+            textA.style.height = 2 * cText + "px";
+        }       
+    </script>
 </html>
